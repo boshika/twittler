@@ -1,0 +1,107 @@
+
+
+#container {
+/*	background: grey;*/
+	width: 800px;
+	height: 700px;
+	background color: blue;
+	margin-left: 20px;
+}
+
+h1 {
+	/*color: red;*/
+	font-family: "Times New Roman", Times, serif;
+	text-shadow: 3px 3px blue;
+	margin-left: 400px;
+	}
+
+hr {
+	border-top: 5px solid #8c8b8b;
+}
+
+/*ol {
+	display: inline-block;
+	color: red;
+	border: 1px solid green ;
+	list-style-type: none;
+}*/
+
+/*button {
+	color: black;
+	background-color: #ff0000;
+	font-weight: bold;
+	font-size: 20px;
+}*/
+
+#tweets #back {
+	/*background-color: red;*/
+	width: 700px;
+	height: 30px;
+	display: inline-block;
+	font-size: 40px;
+	margin-left: 20px;
+	float: center;
+   }
+
+ #stream { 	
+ 	/*background-color: grey;*/
+ 	margin-left: 20px;
+	margin-top: 10px;
+ 	display: inline;
+ 	width: 700px;
+   /* height: 300px;*/
+   /* margin: 5px;*/
+    border-width: 7px;
+    border-style: dashed;
+    border-color: rgba(0,0,0,.2);
+    background-color:#19b4f1
+   }
+
+   .username {
+	font-size: 20px;
+	font-style: oblique;
+   }
+   .message {
+   	font-size: 30px;
+   /*	text-shadow: 2px 2px #ff4000;*/
+   }
+   
+  #userStream {
+  	display: inline;
+  	/*background-color: grey;*/
+  	margin-top: 10px;
+ 	margin-left: 20px;
+ 	width: 700px;
+  /*  height: 300px;*/
+  /* margin: 5px;*/
+    border-width: 7px;
+    border-style: dashed;
+    border-color: rgba(0,0,0,.2);
+    background-color:#19b4f1
+  }
+
+  .user {
+  	font-size: 30px;
+  	/*text-shadow: 2px 2px #ff4000;*/
+  }
+
+  /*a {
+    color: #FF0000;
+}*/
+
+  /*li {
+  	font-family: Courier;
+  	font-size: 20px;
+  	font-weight: bold;
+  	color: red;
+  	list-style-type: none;
+  }
+*/
+
+
+
+ 
+
+  
+
+
