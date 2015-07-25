@@ -41,7 +41,7 @@
   <script>
     //display tweets from all users
    var genericTweet = function() {
-    var index = 0                                    //.length - 1;
+      var index = 0                                    //.length - 1;
       while(index <= streams.home.length-1){
           var tweet = streams.home[index];
           console.log(tweet);                 
@@ -49,9 +49,9 @@
           // $("#stream").append( tweet.message  + " " + "<div><font color='black'>" + datetime + "</font></div>");
           // $("#stream").append("<br>");
           $allTweets = $('<div class="username"><a href="#" class='+ tweet.user +'>' + 
-            "@" + tweet.user + '</a></div>' +'<div class="message">' + tweet.message  + 
-            '</div>' + " " + "<div><font color='black'>" + jQuery.timeago(tweet.created_at) + 
-            "</font></div>" + "</br>");
+                         "@" + tweet.user + '</a></div>' +'<div class="message">' + tweet.message  + 
+                        '</div>' + " " + "<div><font color='black'>" + jQuery.timeago(tweet.created_at) + 
+                         "</font></div>" + "</br>");
           $allTweets.hide().prependTo('#stream').fadeIn("slow");
           index = index+1;
          }                
@@ -65,8 +65,9 @@
             var tweet = streams.users[user][index];
             console.log(tweet);
             $("#userStream").append('<div class= "single"> <div class="username"><a href="#" class=' +
-             tweet.user +'>' + "@" + tweet.user + '</a></div>' + '<div class="message">' + tweet.message  + 
-             '</div>' + " " + "<font color='black'>" + jQuery.timeago(tweet.created_at) + "</font>" + "<br></div>");
+                                     tweet.user +'>' + "@" + tweet.user + '</a></div>' + '<div class="message">' 
+                                    + tweet.message  + '</div>' + " " + "<font color='black'>" + jQuery.timeago(tweet.created_at) + 
+                                    "</font>" + "<br></div>");
             index -= 1;
           }           
        } 
@@ -75,37 +76,38 @@
    $(document).ready(function() {
       genericTweet();     
       $('h3').hide();
-      $('#back').hide();      
+      $('#back').hide();    
+
       $("button").click(function(){
       $('h3').show();
       genericTweet();
      });
         
-  //Displaying individual tweets using on() event handler
-   $(document.body).on('click', 'a', function(e) { 
-     alert("This works, trust me!");
-     e.preventDefault();         
-     $('#tweets').hide();
-     $('#back').show();
-     $('#stream').hide();
-     $('#userStream').show();
-     // $('#username').hide();
-     var username = this.getAttribute('class');
-     console.log(username);
-     specificUser(username);
-     });
+    //Displaying individual tweets using on() event handler
+     $(document.body).on('click', 'a', function(e) { 
+       alert("This works, trust me!");
+       e.preventDefault();         
+       $('#tweets').hide();
+       $('#back').show();
+       $('#stream').hide();
+       $('#userStream').show();
+       // $('#username').hide();
+       var username = this.getAttribute('class');
+       console.log(username);
+       specificUser(username);
+       });
 
-   //Accessing main page, with all tweets, using on()
-   $(document.body).on('click', '#back', function(e) {
-     e.preventDefault();
-     $('.usertag').hide();
-     $('#tweets').show();
-     $('#stream').show();
-     $('#back').hide(); 
-     // $('.single').remove().empty();
-     $('#userStream').empty();
-     // genericTweet();        
-     });
+     //Accessing main page, with all tweets, using on()
+     $(document.body).on('click', '#back', function(e) {
+       e.preventDefault();
+       $('.usertag').hide();
+       $('#tweets').show();
+       $('#stream').show();
+       $('#back').hide(); 
+       // $('.single').remove().empty();
+       $('#userStream').empty();
+       // genericTweet();        
+       });
   });
    </script>    
   </body>
