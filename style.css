@@ -68,12 +68,9 @@ hr {
    
   #userStream {
   	display: inline;
-  	/*background-color: grey;*/
   	margin-top: 10px;
  	margin-left: 20px;
  	width: 700px;
-  /*  height: 300px;*/
-  /* margin: 5px;*/
     border-width: 7px;
     border-style: dashed;
     border-color: rgba(0,0,0,.2);
