@@ -16,8 +16,7 @@
   <div id="container" class=""container-fluid"">
     <div class="col-md-10">
         <h1>TWITTLER</h1>
-       <!--  <h4> Built by Boshika Tara</h4> -->
-    <hr>
+       <!--  <h4> Built by Boshika Tara</h4> -->    <hr>
     </div>
     <div id="tweets" class="col-md-11">
         <button type="submit" class="btn btn-primary btn-md btn-block active">
@@ -39,8 +38,11 @@
   </div>
 
   <script>
-    //display tweets from all users
-   var genericTweet = function() {
+   
+    $(document).ready(function() {
+
+      //displaying tweets from all users, used prependTo
+     var genericTweet = function() {
       var index = 0                                    //.length - 1;
       while(index <= streams.home.length-1){
           var tweet = streams.home[index];
@@ -48,17 +50,23 @@
           // $("#stream").append('<div class="username"><a href="#" class='+ tweet.user +'>' + "@" + tweet.user + '</a></div>')
           // $("#stream").append( tweet.message  + " " + "<div><font color='black'>" + datetime + "</font></div>");
           // $("#stream").append("<br>");
+          //Convert DatTime into frindly format
+          var dNow = new Date(Date.now(tweet.created_at));
+          // console.log(dNow);
+          var localdate = (dNow.getMonth()+1) + '/' + dNow.getDate() + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+          console.log(localdate);
+         
           $allTweets = $('<div class="username"><a href="#" class='+ tweet.user +'>' + 
                          "@" + tweet.user + '</a></div>' +'<div class="message">' + tweet.message  + 
-                        '</div>' + " " + "<div><font color='black'>" + jQuery.timeago(tweet.created_at) + 
+                        '</div>' + " " + "<div><font color='black'>" + localdate + " " + '(' + jQuery.timeago(tweet.created_at) + ')' + 
                          "</font></div>" + "</br>");
           $allTweets.hide().prependTo('#stream').fadeIn("slow");
           index = index+1;
          }                
-        }
-             
-    //display tweets from specific user, need to access data from data_generator.js
-    var specificUser = function(user) {
+      }
+           
+    //displaying tweets from specific user, using specific user data from data_generator.js, used append
+      var specificUser = function(user) {
        var index = streams.users[user].length - 1;
        $('#userStream').append('<div class="user">' + '@' + user + " " + 'Tweets' + '</div>')
         while(index >= 0) {
@@ -72,13 +80,12 @@
           }           
        } 
 
-   //Displaying all tweets using click()
-   $(document).ready(function() {
       genericTweet();     
       $('h3').hide();
-      $('#back').hide();    
+      $('#back').hide(); 
 
-      $("button").click(function(){
+      //Displaying all tweets using click()
+      $("#tweets").click(function(){
       $('h3').show();
       genericTweet();
      });
@@ -112,6 +119,7 @@
    </script>    
   </body>
 </html>
+
 <!-- // $(document).ready(function(){
       //   var $body = $('body');
       //   $body.html('');
